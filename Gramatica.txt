@@ -1,0 +1,5 @@
+namespace : Cplusplus;
+Programa  -> Librerias Main\;
+Librerias -> #include <Identificador> \;
+Main      -> void main() BloqueInstrucciones\;
+BloqueInstrucciones -> \;

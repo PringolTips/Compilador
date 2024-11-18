@@ -1,0 +1,14 @@
+C:\Lenguajes y Automatas\Compilador\bin\Debug\net8.0\Compilador.exe
+C:\Lenguajes y Automatas\Compilador\bin\Debug\net8.0\Compilador.deps.json
+C:\Lenguajes y Automatas\Compilador\bin\Debug\net8.0\Compilador.runtimeconfig.json
+C:\Lenguajes y Automatas\Compilador\bin\Debug\net8.0\Compilador.dll
+C:\Lenguajes y Automatas\Compilador\bin\Debug\net8.0\Compilador.pdb
+C:\Lenguajes y Automatas\Compilador\obj\Debug\net8.0\Compilador.GeneratedMSBuildEditorConfig.editorconfig
+C:\Lenguajes y Automatas\Compilador\obj\Debug\net8.0\Compilador.AssemblyInfoInputs.cache
+C:\Lenguajes y Automatas\Compilador\obj\Debug\net8.0\Compilador.AssemblyInfo.cs
+C:\Lenguajes y Automatas\Compilador\obj\Debug\net8.0\Compilador.csproj.CoreCompileInputs.cache
+C:\Lenguajes y Automatas\Compilador\obj\Debug\net8.0\Compilador.dll
+C:\Lenguajes y Automatas\Compilador\obj\Debug\net8.0\refint\Compilador.dll
+C:\Lenguajes y Automatas\Compilador\obj\Debug\net8.0\Compilador.pdb
+C:\Lenguajes y Automatas\Compilador\obj\Debug\net8.0\Compilador.genruntimeconfig.cache
+C:\Lenguajes y Automatas\Compilador\obj\Debug\net8.0\ref\Compilador.dll
