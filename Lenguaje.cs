@@ -7,7 +7,7 @@ using System.Runtime.InteropServices;
 using System.Threading.Tasks;
 
 /*
-    Requerimiento 1: Solo la primera produccion es publica, el resto es privada
+    Requerimiento 1: Solo la primera produccion es publica, el resto es privada         -Done
     Requerimiento 2: Implementar la cerradura Epsilo
     Requerimiento 3: Implementar la el operador OR
     Requerimiento 4: Indentar el código
@@ -17,6 +17,11 @@ namespace Compilador
 {
     public class Lenguaje : Sintaxis
     {
+        private string inden = "\t";
+        private bool first = true;
+         public Lenguaje() 
+        {
+        }
         public Lenguaje(string nombre) : base(nombre)
         {
         }
@@ -53,9 +58,15 @@ namespace Compilador
         }
         private void producciones()
         {
-            if (Clasificacion == Tipos.SNT)
+            if (Clasificacion == Tipos.SNT && first)
             {
                 lenguajecs.WriteLine("        public void " + Contenido + "()");
+                lenguajecs.WriteLine("        {");
+                first = false;
+            }
+            else if(Clasificacion == Tipos.SNT)
+            {
+                lenguajecs.WriteLine("        private void " + Contenido + "()");
                 lenguajecs.WriteLine("        {");
             }
             match(Tipos.SNT);
@@ -110,6 +121,10 @@ namespace Compilador
             {
                 conjuntoTokens();
             }
+        }
+        private void OR_Token()
+        {
+            
         }
     }
 }
