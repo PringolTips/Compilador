@@ -49,7 +49,10 @@ namespace Cplusplus
 			match("(");
 			match(Tipos.Condicion);
 			match(")");
+			if(getContenido() == "BloqueInstrucciones")
+				{
+					BloqueInstrucciones()
+				}
 			}
 		}
-    }
-}
+		}

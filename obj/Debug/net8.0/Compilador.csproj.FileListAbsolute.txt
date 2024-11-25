@@ -13,3 +13,18 @@ C:\Lenguajes y Automatas\Compilador\obj\Debug\net8.0\Compilador.pdb
 C:\Lenguajes y Automatas\Compilador\obj\Debug\net8.0\Compilador.genruntimeconfig.cache
 C:\Lenguajes y Automatas\Compilador\obj\Debug\net8.0\ref\Compilador.dll
 C:\Lenguajes y Automatas\Compilador\obj\Debug\net8.0\Compilador.sourcelink.json
+C:\Users\Cristian\Documents\Semestre 5\Lenguajes y automatas ll\Compilador\bin\Debug\net8.0\Compilador.exe
+C:\Users\Cristian\Documents\Semestre 5\Lenguajes y automatas ll\Compilador\bin\Debug\net8.0\Compilador.deps.json
+C:\Users\Cristian\Documents\Semestre 5\Lenguajes y automatas ll\Compilador\bin\Debug\net8.0\Compilador.runtimeconfig.json
+C:\Users\Cristian\Documents\Semestre 5\Lenguajes y automatas ll\Compilador\bin\Debug\net8.0\Compilador.dll
+C:\Users\Cristian\Documents\Semestre 5\Lenguajes y automatas ll\Compilador\bin\Debug\net8.0\Compilador.pdb
+C:\Users\Cristian\Documents\Semestre 5\Lenguajes y automatas ll\Compilador\obj\Debug\net8.0\Compilador.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Cristian\Documents\Semestre 5\Lenguajes y automatas ll\Compilador\obj\Debug\net8.0\Compilador.AssemblyInfoInputs.cache
+C:\Users\Cristian\Documents\Semestre 5\Lenguajes y automatas ll\Compilador\obj\Debug\net8.0\Compilador.AssemblyInfo.cs
+C:\Users\Cristian\Documents\Semestre 5\Lenguajes y automatas ll\Compilador\obj\Debug\net8.0\Compilador.csproj.CoreCompileInputs.cache
+C:\Users\Cristian\Documents\Semestre 5\Lenguajes y automatas ll\Compilador\obj\Debug\net8.0\Compilador.sourcelink.json
+C:\Users\Cristian\Documents\Semestre 5\Lenguajes y automatas ll\Compilador\obj\Debug\net8.0\Compilador.dll
+C:\Users\Cristian\Documents\Semestre 5\Lenguajes y automatas ll\Compilador\obj\Debug\net8.0\refint\Compilador.dll
+C:\Users\Cristian\Documents\Semestre 5\Lenguajes y automatas ll\Compilador\obj\Debug\net8.0\Compilador.pdb
+C:\Users\Cristian\Documents\Semestre 5\Lenguajes y automatas ll\Compilador\obj\Debug\net8.0\Compilador.genruntimeconfig.cache
+C:\Users\Cristian\Documents\Semestre 5\Lenguajes y automatas ll\Compilador\obj\Debug\net8.0\ref\Compilador.dll
