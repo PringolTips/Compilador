@@ -20,7 +20,6 @@ namespace Compilador
 {
     public class Lenguaje : Sintaxis
     {
-<<<<<<< HEAD
         private bool first = true;
         private string pertenece = "";
         private int espacios = 0;
@@ -28,14 +27,6 @@ namespace Compilador
         //private List<Epsilon_or> Cerradura_operaciones;
         private List<Produccion> Producciones;
         public Lenguaje()
-=======
-        private string inden = "\t";
-        private bool first = true;
-         public Lenguaje() 
-        {
-        }
-        public Lenguaje(string nombre) : base(nombre)
->>>>>>> 9a4cff8d6605a8b3fc82c4b3b16f354319b66396
         {
             //Cerradura_operaciones = new List<Epsilon_or>();
             Producciones = new List<Produccion>();
@@ -97,22 +88,11 @@ namespace Compilador
         {
             if (Clasificacion == Tipos.SNT && first)
             {
-<<<<<<< HEAD
                 Indentado();
                 lenguajecs.WriteLine("public void " + Contenido + "()");
                 Indentado();
                 lenguajecs.WriteLine("{");
                 first = false;
-=======
-                lenguajecs.WriteLine("        public void " + Contenido + "()");
-                lenguajecs.WriteLine("        {");
-                first = false;
-            }
-            else if(Clasificacion == Tipos.SNT)
-            {
-                lenguajecs.WriteLine("        private void " + Contenido + "()");
-                lenguajecs.WriteLine("        {");
->>>>>>> 9a4cff8d6605a8b3fc82c4b3b16f354319b66396
             }
             else if (Clasificacion == Tipos.SNT)
             {
@@ -164,7 +144,6 @@ namespace Compilador
                 var v = Producciones.Find(v => v.nombre == pertenece);
                 if ( v.Ors[lis_ors].Es_epsilon)
                 {   
-                    //espacios++;
                     Indentado();
                     lenguajecs.Write("if (");
                     if (Clasificacion == Tipos.SNT)
@@ -182,7 +161,6 @@ namespace Compilador
                     }
                     else
                     {
-                        
                         lenguajecs.WriteLine("getContenido() ==  " + Contenido +")" );
                         Indentado();
                         lenguajecs.WriteLine("{" );
@@ -226,7 +204,6 @@ namespace Compilador
                 conjuntoTokens();
             }
         }
-<<<<<<< HEAD
         private void lectura()
         {
             pertenece = Contenido;
@@ -269,15 +246,12 @@ namespace Compilador
             {
                 
                 v.Ors[lis_ors].Es_or =true;
-                //v.Es_or = true;
                 v.Ors[lis_ors].cont++;
                 match(Tipos.Or);
             }
             else if (Clasificacion == Tipos.Epsilon)
             {
-                //var v = Producciones.Find(v => v.nombre == pertenece);
                 v.Ors[lis_ors].Es_epsilon =true;
-                //v.Es_epsilon = true;
                 match(Tipos.Epsilon);
 
             }
@@ -324,11 +298,6 @@ namespace Compilador
             }
 
 
-=======
-        private void OR_Token()
-        {
-            
->>>>>>> 9a4cff8d6605a8b3fc82c4b3b16f354319b66396
         }
     }
 }
