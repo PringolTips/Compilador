@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 using Microsoft.VisualBasic;
 
 /*
-    Requerimiento 1: Solo la primera produccion es publica, el resto es privada
+    Requerimiento 1: Solo la primera produccion es publica, el resto es privada         -Done
     Requerimiento 2: Implementar la cerradura Epsilo
     Requerimiento 3: Implementar la el operador OR
     Requerimiento 4: Indentar el código
@@ -20,6 +20,7 @@ namespace Compilador
 {
     public class Lenguaje : Sintaxis
     {
+<<<<<<< HEAD
         private bool first = true;
         private string pertenece = "";
         private int espacios = 0;
@@ -27,6 +28,14 @@ namespace Compilador
         //private List<Epsilon_or> Cerradura_operaciones;
         private List<Produccion> Producciones;
         public Lenguaje()
+=======
+        private string inden = "\t";
+        private bool first = true;
+         public Lenguaje() 
+        {
+        }
+        public Lenguaje(string nombre) : base(nombre)
+>>>>>>> 9a4cff8d6605a8b3fc82c4b3b16f354319b66396
         {
             //Cerradura_operaciones = new List<Epsilon_or>();
             Producciones = new List<Produccion>();
@@ -88,11 +97,22 @@ namespace Compilador
         {
             if (Clasificacion == Tipos.SNT && first)
             {
+<<<<<<< HEAD
                 Indentado();
                 lenguajecs.WriteLine("public void " + Contenido + "()");
                 Indentado();
                 lenguajecs.WriteLine("{");
                 first = false;
+=======
+                lenguajecs.WriteLine("        public void " + Contenido + "()");
+                lenguajecs.WriteLine("        {");
+                first = false;
+            }
+            else if(Clasificacion == Tipos.SNT)
+            {
+                lenguajecs.WriteLine("        private void " + Contenido + "()");
+                lenguajecs.WriteLine("        {");
+>>>>>>> 9a4cff8d6605a8b3fc82c4b3b16f354319b66396
             }
             else if (Clasificacion == Tipos.SNT)
             {
@@ -206,6 +226,7 @@ namespace Compilador
                 conjuntoTokens();
             }
         }
+<<<<<<< HEAD
         private void lectura()
         {
             pertenece = Contenido;
@@ -303,6 +324,11 @@ namespace Compilador
             }
 
 
+=======
+        private void OR_Token()
+        {
+            
+>>>>>>> 9a4cff8d6605a8b3fc82c4b3b16f354319b66396
         }
     }
 }
