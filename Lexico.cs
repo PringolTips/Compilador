@@ -12,7 +12,7 @@ namespace Compilador
         protected StreamWriter log;
         protected StreamWriter lenguajecs;
 
-        protected int linea, caracter;
+        protected int linea, caracter, reinicio =0;
         const int F = -1;
         const int E = -2;
         int[,] TRAND =
@@ -99,6 +99,7 @@ namespace Compilador
             int Estado = 0;
             while (Estado >= 0)
             {
+                reinicio++;
                 c = (char)archivo.Peek();
 
                 Estado = TRAND[Estado, Columna(c)];
