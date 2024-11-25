@@ -1,5 +1,6 @@
 namespace : Cplusplus;
-Programa  -> Librerias Main\;
+Programa  -> \(Librerias\)\? Main\;
 Librerias -> #include <Identificador> \;
 Main      -> void main() BloqueInstrucciones\;
 BloqueInstrucciones -> \;
+If -> if (Condicion) \( BloqueInstrucciones \| Instruccion \) \;

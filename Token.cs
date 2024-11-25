@@ -12,8 +12,6 @@ namespace Compilador
             ST, SNT, FinProduccion, Epsilon , Or, Izquierdo, Derecho, Flecha, Tipo
             
         };
-        private string? contenido;
-        private Tipos clasificacion;
         public Token()
         {
             Contenido = "";

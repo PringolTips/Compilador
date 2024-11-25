@@ -8,37 +8,48 @@ using System.Threading.Tasks;
 
 namespace Cplusplus
 {
-    public class Lenguaje : Sintaxis
-    {
-        public Lenguaje()
-        {
-        }
-        public Lenguaje(string nombre) : base(nombre)
-        {
-        }
-        public void Programa()
-        {
-            Librerias();
-            Main();
-        }
-        public void Librerias()
-        {
-            match("#");
-            match("include");
-            match("<");
-            match(Tipos.Identificador);
-            match(">");
-        }
-        public void Main()
-        {
-            match("void");
-            match("main");
-            match("(");
-            match(")");
-            BloqueInstrucciones();
-        }
-        public void BloqueInstrucciones()
-        {
-        }
+	public class Lenguaje : Sintaxis
+	{
+		public Lenguaje()
+		{
+		}
+		public Lenguaje(string nombre) : base(nombre)
+		{
+		}
+		public void Programa()
+		{
+			if (getContenido() ==  "#" )
+			{
+				Librerias()
+			}
+			Main();
+		}
+		private void Librerias()
+		{
+			match("#");
+			match("include");
+			match("<");
+			match(Tipos.Identificador);
+			match(">");
+		}
+		private void Main()
+		{
+			match("void");
+			match("main");
+			match("(");
+			match(")");
+			BloqueInstrucciones();
+		}
+		private void BloqueInstrucciones()
+		{
+		}
+		private void If()
+		{
+			match("if");
+			match("(");
+			match(Tipos.Condicion);
+			match(")");
+			}
+		}
     }
 }
