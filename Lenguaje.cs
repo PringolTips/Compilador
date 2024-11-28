@@ -389,18 +389,22 @@ namespace Compilador
                 lenguajecs.Write("\t");
             }
         }
-        private bool elseEscrito = false;
+        private bool elseEscrito = false, elseIf = false;
         private void OR_Token()
         {
             var v = Producciones.Find(v => v.nombre == pertenece);
-            if (v.Ors[lis_ors].cont > cont)
+            if (v.Ors[lis_ors].cont > cont && elseIf)
             {
                 Indentado();
                 lenguajecs.Write("else if(");
+                elseIf = false;
+            }
+            else if(!elseIf)
+            {
+                elseIf = true;
             }
             else
             {
-
                 if (!elseEscrito)
                 {
                     Indentado();

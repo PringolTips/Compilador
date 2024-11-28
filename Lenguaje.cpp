@@ -41,9 +41,17 @@ namespace Lenguaje
 			{
 				match("a");
 			}
-			else if(			else if(getContenido() == "b")
+			else if(getContenido() == "b")
 				{
 					match("b");
+				}
+			else if(getContenido() == "H")
+				{
+					H()
+				}
+			else if(getContenido() == "si")
+				{
+					match("si");
 				}
 			else
 			{
