@@ -1,5 +1,8 @@
 namespace:Lenguaje;
 Programa -> A b C \;
 A -> C \( Numero b C D \)\? D \;
-C -> D \(  a \| b \| H \| si \| D \) \;
-D -> \;
+C -> d \(  a \| C \| D  \| D \) \;
+D -> d\;
+
+
+

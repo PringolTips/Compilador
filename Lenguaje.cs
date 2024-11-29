@@ -194,69 +194,74 @@ namespace Compilador
                         espacios--;
                         match(Tipos.Tipo);
                     }
-                    conjuntoTokens();
+                    espacios++;
+                    if (v.Ors[lis_ors].Es_or == false)
+                    {
+                        conjuntoTokens();
+                    }
+                    espacios--;
 
 
                     //espacios--;
                     Indentado();
                     lenguajecs.WriteLine("}");
-                    if (Clasificacion == Tipos.Izquierdo)
-                    {
+                    /* if (Clasificacion == Tipos.Izquierdo)
+                     {*/
 
-                        if (v.Ors[lis_ors].Es_or)
+                    if (v.Ors[lis_ors].Es_or)
+                    {
+                        Indentado();
+                        lenguajecs.Write("if(");
+                        cont++;
+                        if (Clasificacion == Tipos.SNT)
                         {
+                            var u = Producciones.Find(u => u.nombre == Contenido);
+                            lenguajecs.WriteLine("getContenido() == \"" + u.Primer_caracter + "\")");
+                            espacios++;
                             Indentado();
-                            lenguajecs.Write("if(");
-                            cont++;
-                            if (Clasificacion == Tipos.SNT)
-                            {
-                                var u = Producciones.Find(u => u.nombre == Contenido);
-                                lenguajecs.WriteLine("getContenido() == \"" + Contenido + "\")");
-                                espacios++;
-                                Indentado();
-                                lenguajecs.WriteLine("{");
-                                espacios++;
-                                Indentado();
-                                lenguajecs.WriteLine(Contenido + "()");
-                                espacios--;
-                                Indentado();
-                                lenguajecs.WriteLine("}");
-                                espacios--;
-                                match(Tipos.SNT);
-                            }
-                            if (Clasificacion == Tipos.ST)
-                            {
-                                lenguajecs.WriteLine("getContenido() == \"" + Contenido + "\")");
-                                espacios++;
-                                Indentado();
-                                lenguajecs.WriteLine("{");
-                                espacios++;
-                                Indentado();
-                                lenguajecs.WriteLine("match(\"" + Contenido + "\");");
-                                espacios--;
-                                Indentado();
-                                lenguajecs.WriteLine("}");
-                                espacios--;
-                                match(Tipos.ST);
-                            }
-                            else if (Clasificacion == Tipos.Tipo)
-                            {
-                                lenguajecs.WriteLine("getClasigficacion() == Tipos." + Contenido + ")");
-                                espacios++;
-                                Indentado();
-                                lenguajecs.WriteLine("{");
-                                espacios++;
-                                Indentado();
-                                lenguajecs.WriteLine("match(Tipos." + Contenido + ");");
-                                espacios--;
-                                Indentado();
-                                lenguajecs.WriteLine("}");
-                                espacios--;
-                                match(Tipos.Tipo);
-                            }
-                            OR_Token();
-                            cont = 0;
+                            lenguajecs.WriteLine("{");
+                            espacios++;
+                            Indentado();
+                            lenguajecs.WriteLine(Contenido + "()");
+                            espacios--;
+                            Indentado();
+                            lenguajecs.WriteLine("}");
+                            espacios--;
+                            match(Tipos.SNT);
                         }
+                        if (Clasificacion == Tipos.ST)
+                        {
+                            lenguajecs.WriteLine("getContenido() == \"" + Contenido + "\")");
+                            espacios++;
+                            Indentado();
+                            lenguajecs.WriteLine("{");
+                            espacios++;
+                            Indentado();
+                            lenguajecs.WriteLine("match(\"" + Contenido + "\");");
+                            espacios--;
+                            Indentado();
+                            lenguajecs.WriteLine("}");
+                            espacios--;
+                            match(Tipos.ST);
+                        }
+                        else if (Clasificacion == Tipos.Tipo)
+                        {
+                            lenguajecs.WriteLine("getClasigficacion() == Tipos." + Contenido + ")");
+                            espacios++;
+                            Indentado();
+                            lenguajecs.WriteLine("{");
+                            espacios++;
+                            Indentado();
+                            lenguajecs.WriteLine("match(Tipos." + Contenido + ");");
+                            espacios--;
+                            Indentado();
+                            lenguajecs.WriteLine("}");
+                            espacios--;
+                            match(Tipos.Tipo);
+                        }
+                        OR_Token();
+                        cont = 0;
+                        //}
                     }
 
                 }
@@ -268,7 +273,7 @@ namespace Compilador
                     if (Clasificacion == Tipos.SNT)
                     {
                         var u = Producciones.Find(u => u.nombre == Contenido);
-                        lenguajecs.WriteLine("getContenido() == \"" + Contenido + "\")");
+                        lenguajecs.WriteLine("getContenido() == \"" + u.Primer_caracter + "\")");
                         Indentado();
                         lenguajecs.WriteLine("{");
                         espacios++;
@@ -399,7 +404,7 @@ namespace Compilador
                 lenguajecs.Write("else if(");
                 elseIf = false;
             }
-            else if(!elseIf)
+            else if (!elseIf)
             {
                 elseIf = true;
             }
@@ -419,19 +424,17 @@ namespace Compilador
             if (Clasificacion == Tipos.SNT)
             {
                 if (v.Ors[lis_ors].cont > cont)
-                {
+                {    
                     var u = Producciones.Find(u => u.nombre == Contenido);
-                    lenguajecs.WriteLine("getContenido() == \"" + Contenido + "\")");
-                    espacios++;
+                    lenguajecs.WriteLine("getContenido() == \"" + u.Primer_caracter + "\")");
                     Indentado();
                     lenguajecs.WriteLine("{");
                     espacios++;
                     Indentado();
-                    lenguajecs.WriteLine(Contenido + "()");
+                    lenguajecs.WriteLine(Contenido + "();");
                     espacios--;
                     Indentado();
                     lenguajecs.WriteLine("}");
-                    espacios--;
                     cont++;
 
                 }
@@ -439,7 +442,7 @@ namespace Compilador
                 {
                     espacios++;
                     Indentado();
-                    lenguajecs.WriteLine(Contenido + "()");
+                    lenguajecs.WriteLine(Contenido + "();");
                     espacios--;
                     Indentado();
                     lenguajecs.WriteLine("}");
@@ -451,7 +454,6 @@ namespace Compilador
                 if (v.Ors[lis_ors].cont > cont)
                 {
                     lenguajecs.WriteLine("getContenido() == \"" + Contenido + "\")");
-                    espacios++;
                     Indentado();
                     lenguajecs.WriteLine("{");
                     espacios++;
@@ -460,7 +462,6 @@ namespace Compilador
                     espacios--;
                     Indentado();
                     lenguajecs.WriteLine("}");
-                    espacios--;
                     cont++;
 
                 }
@@ -481,7 +482,6 @@ namespace Compilador
                 if (v.Ors[lis_ors].cont < cont)
                 {
                     lenguajecs.WriteLine("getClasigficacion() == Tipos." + Contenido + ")");
-                    espacios++;
                     Indentado();
                     lenguajecs.WriteLine("{");
                     espacios++;
@@ -490,7 +490,6 @@ namespace Compilador
                     espacios--;
                     Indentado();
                     lenguajecs.WriteLine("}");
-                    espacios--;
                     cont++;
                 }
                 else

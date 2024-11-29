@@ -28,38 +28,35 @@ namespace Lenguaje
 			if (getClasificacion() ==  Tipos.Numero)
 			{
 				match(Tipos.Numero);
-			match("b");
-			C();
-			D();
+				match("b");
+				C();
+				D();
 			}
 			D();
 		}
 		private void C()
 		{
-			D();
+			match("d");
 			if(getContenido() == "a")
 			{
 				match("a");
 			}
-			else if(getContenido() == "b")
-				{
-					match("b");
-				}
-			else if(getContenido() == "H")
-				{
-					H()
-				}
-			else if(getContenido() == "si")
-				{
-					match("si");
-				}
+			else if(getContenido() == "d")
+			{
+				C();
+			}
+			else if(getContenido() == "d")
+			{
+				D();
+			}
 			else
 			{
-				D()
+				D();
 			}
 		}
 		private void D()
 		{
+			match("d");
 		}
 	}
 }
